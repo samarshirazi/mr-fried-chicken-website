@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mr. Fried Chicken | Premium Fried Chicken & Burgers</title>
-    <meta name="description" content="Experience the best fried chicken in Odense! Fresh, crispy chicken combos, juicy burgers, and delicious sides. Order online for takeaway or delivery.">
+    <title>Mr. Fried Chicken | Premium Burgers & Crispy Chicken</title>
+    <meta name="description" content="Discover the most delicious burgers and crispy fried chicken in Odense! Handcrafted with fresh ingredients, bold flavors, and served with passion. Order online for takeaway or delivery.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -22,16 +22,17 @@
         
         /* Header */
         .header {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
+            background: rgba(20, 20, 20, 0.95);
             color: white;
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255,107,53,0.1);
         }
         
         .nav-container {
@@ -44,10 +45,14 @@
         }
         
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #ff6b35;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #ff6b35 0%, #ffd700 50%, #ff6b35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+            letter-spacing: -0.5px;
         }
         
         .nav-links {
@@ -87,7 +92,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23ff6b35" width="1200" height="800"/><circle cx="200" cy="200" r="100" fill="%23ffffff" opacity="0.1"/><circle cx="800" cy="400" r="150" fill="%23ffffff" opacity="0.1"/><circle cx="1000" cy="200" r="80" fill="%23ffffff" opacity="0.1"/></svg>');
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23ff8c35;stop-opacity:0.8" /><stop offset="100%" style="stop-color:%23ff6b35;stop-opacity:1" /></radialGradient></defs><rect fill="url(%23grad1)" width="1200" height="800"/><circle cx="300" cy="200" r="120" fill="%23ffffff" opacity="0.05"/><circle cx="900" cy="300" r="180" fill="%23ffffff" opacity="0.08"/><circle cx="600" cy="600" r="100" fill="%23ffffff" opacity="0.06"/><polygon points="100,100 200,150 100,200" fill="%23ffd700" opacity="0.1"/><polygon points="1000,500 1100,550 1000,600" fill="%23ffd700" opacity="0.1"/></svg>');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -98,6 +103,17 @@
             text-align: center;
             color: white;
             position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,215,0,0.1) 0%, transparent 50%);
         }
         
         .hero-content {
@@ -107,13 +123,16 @@
         }
         
         .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-            background: linear-gradient(45deg, #ff6b35, #ffd700);
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.8);
+            background: linear-gradient(135deg, #ff6b35 0%, #ffd700 30%, #ff8c35 70%, #ff6b35 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            letter-spacing: -1px;
+            line-height: 1.1;
         }
         
         .hero p {
@@ -166,8 +185,19 @@
         
         /* About Section */
         .about {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 120px 0;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 50%, #f8f9fa 100%);
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #ff6b35 50%, transparent 100%);
         }
         
         .container {
@@ -242,9 +272,21 @@
         
         /* Menu Section */
         .menu {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #2d1810 0%, #1a1a1a 100%);
+            padding: 120px 0;
+            background: linear-gradient(135deg, #2d1810 0%, #1a1a1a 50%, #2d1810 100%);
             color: white;
+            position: relative;
+        }
+        
+        .menu::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 30%, rgba(255,215,0,0.05) 0%, transparent 50%);
+            pointer-events: none;
         }
         
         .menu-grid {
@@ -255,17 +297,36 @@
         }
         
         .menu-category {
-            background: rgba(255,255,255,0.05);
-            padding: 2rem;
-            border-radius: 20px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.03);
+            padding: 2.5rem;
+            border-radius: 25px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,107,53,0.2);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-category::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff6b35, #ffd700, transparent);
+            transition: left 0.5s ease;
         }
         
         .menu-category:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.1);
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,107,53,0.4);
+            box-shadow: 0 20px 40px rgba(255,107,53,0.1);
+        }
+        
+        .menu-category:hover::before {
+            left: 100%;
         }
         
         .menu-category h3 {
@@ -279,9 +340,16 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1.8rem;
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .menu-item:hover {
+            background: rgba(255,107,53,0.05);
+            transform: translateX(8px);
         }
         
         .menu-item:last-child {
@@ -308,8 +376,19 @@
         
         /* Features Section */
         .features {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 120px 0;
+            background: linear-gradient(135deg, #fafafa 0%, #ffffff 30%, #f8f9fa 70%, #ffffff 100%);
+            position: relative;
+        }
+        
+        .features::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #ff6b35 50%, transparent 100%);
         }
         
         .features-grid {
@@ -321,16 +400,36 @@
         
         .feature-card {
             text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            padding: 2.5rem;
+            background: linear-gradient(145deg, #ffffff 0%, #fafafa 100%);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(255,107,53,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #ff6b35, #ffd700, #ff8c35);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
         }
         
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(255,107,53,0.15);
+            border-color: rgba(255,107,53,0.2);
+        }
+        
+        .feature-card:hover::before {
+            transform: translateX(0);
         }
         
         .feature-icon {
@@ -455,6 +554,78 @@
                 display: none;
             }
             
+            .hero {
+                padding: 0 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+            }
+            
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .menu-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .nav-container {
+                padding: 0 1.5rem;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .menu-category {
+                padding: 2rem;
+            }
+            
+            .feature-card {
+                padding: 2rem;
+            }
+            
+            .about,
+            .menu,
+            .features,
+            .contact {
+                padding: 80px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -463,31 +634,18 @@
                 font-size: 1.1rem;
             }
             
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
             .section-title {
                 font-size: 2rem;
             }
             
-            .nav-container {
-                padding: 0 1rem;
+            .menu-item {
+                flex-direction: column;
+                gap: 0.5rem;
             }
             
-            .container {
-                padding: 0 1rem;
+            .item-price {
+                align-self: flex-end;
+                font-size: 1.2rem;
             }
         }
         
@@ -553,7 +711,7 @@
     <section class="hero" id="home">
         <div class="hero-content">
             <h1>Mr. Fried Chicken</h1>
-            <p>Experience the best fried chicken in Odense! Crispy on the outside, juicy on the inside - every single time.</p>
+            <p>Discover Odense's most irresistible burgers and crispy fried chicken! Handcrafted with premium ingredients, bold flavors, and served with genuine passion.</p>
             <div class="cta-buttons">
                 <a href="#menu" class="btn">
                     <i class="fas fa-utensils"></i>
@@ -574,13 +732,13 @@
             <p class="section-subtitle">Passionate about delivering exceptional fried chicken experiences</p>
             <div class="about-grid">
                 <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>At Mr. Fried Chicken, we specialize in delicious and crispy fried chicken combos that satisfy every taste! We have a wide selection of meals that include everything from juicy pieces of chicken, golden nuggets, spicy wings and crunchy fries to fresh coleslaw salads and dippers that complete the meal.</p>
-                    <p>Whether you're looking for a classic chicken combo or a large family pack, Mr. Fried Chicken has the perfect solution. Our combos are carefully composed so you get both taste and satisfaction in every bite.</p>
-                    <p>We always work with fresh, high-quality ingredients, so we can be sure that you get the best possible meal every time you order our food.</p>
+                    <h3>Our Passion for Perfect Food</h3>
+                    <p>At Mr. Fried Chicken, we're not just about crispy chicken - we're masters of the perfect burger experience! Our signature burgers feature hand-breaded crispy chicken, premium beef patties, and locally sourced ingredients that create unforgettable flavor combinations.</p>
+                    <p>From our legendary "Fried Boss Burger" to our spicy buffalo wings, every dish is crafted with passion and precision. We believe that great food brings people together, which is why we put love into every burger, every piece of chicken, and every side dish we serve.</p>
+                    <p>Using only the freshest ingredients and time-honored cooking techniques, we ensure that every bite delivers the perfect balance of taste, texture, and satisfaction. This is more than fast food - this is food made with heart.</p>
                 </div>
                 <div class="about-image">
-                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23ff6b35' width='400' height='300'/><circle cx='200' cy='150' r='80' fill='%23ffffff' opacity='0.8'/><text x='200' y='160' text-anchor='middle' fill='%23ff6b35' font-size='24' font-weight='bold'>FRESH</text><text x='200' y='180' text-anchor='middle' fill='%23ff6b35' font-size='16'>CHICKEN</text></svg>" alt="Fresh Chicken">
+                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><defs><linearGradient id='burgergradient' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23ff6b35;stop-opacity:1' /><stop offset='50%' style='stop-color:%23ffd700;stop-opacity:1' /><stop offset='100%' style='stop-color:%23ff8c35;stop-opacity:1' /></linearGradient></defs><rect fill='url(%23burgergradient)' width='400' height='300'/><circle cx='200' cy='120' r='60' fill='%23ffffff' opacity='0.9'/><ellipse cx='200' cy='140' rx='45' ry='15' fill='%23ff6b35'/><ellipse cx='200' cy='155' rx='50' ry='8' fill='%23228B22'/><ellipse cx='200' cy='170' rx='55' ry='12' fill='%238B4513'/><ellipse cx='200' cy='185' rx='45' ry='15' fill='%23ff6b35'/><text x='200' y='220' text-anchor='middle' fill='%23ffffff' font-size='18' font-weight='bold'>PREMIUM</text><text x='200' y='240' text-anchor='middle' fill='%23ffffff' font-size='16'>BURGERS</text></svg>" alt="Premium Burgers">
                 </div>
             </div>
         </div>
@@ -593,77 +751,77 @@
             <p class="section-subtitle" style="color: #ccc;">Crafted with love, served with pride</p>
             <div class="menu-grid">
                 <div class="menu-category">
-                    <h3>🍗 Fried Chicken Combos</h3>
+                    <h3>🍔 Signature Burgers</h3>
                     <div class="menu-item">
                         <div class="item-info">
-                            <h4>Classic Chicken Combo</h4>
-                            <p>Crispy fried chicken pieces, fries, coleslaw, and drink</p>
+                            <h4>The Fried Boss Burger</h4>
+                            <p>Double crispy chicken breast, bacon, lettuce, tomato, special sauce on brioche bun</p>
                         </div>
-                        <span class="item-price">89 DKK</span>
+                        <span class="item-price">125 DKK</span>
                     </div>
                     <div class="menu-item">
                         <div class="item-info">
-                            <h4>Spicy Wings Combo</h4>
-                            <p>Hot and spicy chicken wings with fries and dip</p>
+                            <h4>Spicy Fire Burger</h4>
+                            <p>Crispy chicken with jalapeños, hot sauce, pepper jack cheese, and cooling ranch</p>
                         </div>
-                        <span class="item-price">79 DKK</span>
+                        <span class="item-price">115 DKK</span>
                     </div>
                     <div class="menu-item">
                         <div class="item-info">
-                            <h4>Family Pack</h4>
-                            <p>12 pieces of chicken, large fries, coleslaw, 4 drinks</p>
+                            <h4>Classic Fried Chicken Combo</h4>
+                            <p>Our signature burger with fries, coleslaw, and drink</p>
                         </div>
-                        <span class="item-price">299 DKK</span>
+                        <span class="item-price">139 DKK</span>
                     </div>
                 </div>
                 
                 <div class="menu-category">
-                    <h3>🍟 Sides & Extras</h3>
+                    <h3>🍗 Chicken Classics</h3>
                     <div class="menu-item">
                         <div class="item-info">
-                            <h4>Golden Nuggets</h4>
-                            <p>Crispy chicken nuggets with your choice of dip</p>
+                            <h4>Crispy Chicken Strips</h4>
+                            <p>Tender chicken strips with honey mustard or BBQ sauce</p>
+                        </div>
+                        <span class="item-price">69 DKK</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h4>Buffalo Wings</h4>
+                            <p>Spicy buffalo wings with blue cheese dip and celery</p>
+                        </div>
+                        <span class="item-price">85 DKK</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h4>Family Chicken Bucket</h4>
+                            <p>10 pieces of mixed chicken with large fries and coleslaw</p>
+                        </div>
+                        <span class="item-price">269 DKK</span>
+                    </div>
+                </div>
+                
+                <div class="menu-category">
+                    <h3>🍟 Sides & Drinks</h3>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h4>Loaded Fries</h4>
+                            <p>Crispy fries topped with cheese, bacon bits, and green onions</p>
                         </div>
                         <span class="item-price">45 DKK</span>
                     </div>
                     <div class="menu-item">
                         <div class="item-info">
-                            <h4>Crunchy Fries</h4>
-                            <p>Perfectly seasoned and crispy golden fries</p>
+                            <h4>Onion Rings</h4>
+                            <p>Golden beer-battered onion rings with ranch dip</p>
+                        </div>
+                        <span class="item-price">39 DKK</span>
+                    </div>
+                    <div class="menu-item">
+                        <div class="item-info">
+                            <h4>Craft Sodas & Shakes</h4>
+                            <p>Premium sodas, milkshakes (vanilla, chocolate, strawberry)</p>
                         </div>
                         <span class="item-price">29 DKK</span>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-info">
-                            <h4>Fresh Coleslaw</h4>
-                            <p>Creamy coleslaw salad with fresh vegetables</p>
-                        </div>
-                        <span class="item-price">25 DKK</span>
-                    </div>
-                </div>
-                
-                <div class="menu-category">
-                    <h3>🥤 Beverages</h3>
-                    <div class="menu-item">
-                        <div class="item-info">
-                            <h4>Soft Drinks</h4>
-                            <p>Coca-Cola, Fanta, Sprite - Cold and refreshing</p>
-                        </div>
-                        <span class="item-price">19 DKK</span>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-info">
-                            <h4>Fresh Juice</h4>
-                            <p>Orange, Apple, or Mixed fruit juice</p>
-                        </div>
-                        <span class="item-price">25 DKK</span>
-                    </div>
-                    <div class="menu-item">
-                        <div class="item-info">
-                            <h4>Coffee & Tea</h4>
-                            <p>Hot coffee or tea to complement your meal</p>
-                        </div>
-                        <span class="item-price">22 DKK</span>
                     </div>
                 </div>
             </div>
@@ -778,7 +936,8 @@
                 <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                 <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
             </div>
-            <p>&copy; 2025 Mr. Fried Chicken. All rights reserved. | Made with ❤️ in Odense</p>
+            <p>&copy; 2025 Mr. Fried Chicken. All rights reserved. | Crafted with ❤️ in Odense, Denmark</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">Premium burgers & crispy chicken since 2025 • Fresh ingredients • Bold flavors</p>
         </div>
     </footer>
     
