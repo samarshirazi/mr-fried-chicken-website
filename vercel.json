@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd mr-fried-chicken-react && npm run build",
+  "outputDirectory": "mr-fried-chicken-react/dist",
+  "installCommand": "cd mr-fried-chicken-react && npm install",
+  "devCommand": "cd mr-fried-chicken-react && npm run dev",
+  "framework": null
+}
